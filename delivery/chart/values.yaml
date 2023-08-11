@@ -20,7 +20,7 @@ entry:
   #     value: "01"
 hat:
   repositoryBasename: hat
-  tag: "v2-latest-dev"
+  tag: "v3-latest-dev"
   serviceType: ClusterIP
   servicePort: 9001
   env: []
