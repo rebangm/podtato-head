@@ -1,0 +1,24 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: podtato-head
+  namespace: podtato-head
+  labels:
+    app.kubernetes.io/component: podtato-head-entry
+    app.kubernetes.io/instance: podtato-head
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: podtato-head
+    app.kubernetes.io/version: 0.2.7
+    helm.sh/chart: podtato-head-0.2.7
+spec:
+  host: podtato-head.apps.lab2.reslab.cloud
+  to:
+    kind: Service
+    name: podtato-head-entry
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
